@@ -1,0 +1,108 @@
+body {
+    /* border: 3px solid black; */
+    height: 97vh;
+    width: 97vw;
+    display: flex;
+    /* padding: 0; */
+    font-size: 20px;
+}
+.Box {
+    padding: 10px;
+}
+.Box .name {
+    font-size: 45px;
+    text-align: center;
+    font-weight: bolder;
+}
+#leftBox h2 {
+    border-bottom: 2px solid blue;
+    color: blue;
+    font-weight: 100;
+}
+
+
+#rightBox .name{
+    padding: 10px;
+    /* background-color: rgb(100, 99, 99); */
+    border-bottom: 2px solid Black;
+    /* border-radius: 10px; */
+    text-align: center;
+    justify-content: center;
+    font-weight: bold;
+
+}
+#rightBox .name p{
+    font-size: 20px;
+    margin: 5px;
+    font-weight: bolder;
+}
+
+
+
+
+
+
+
+
+
+
+#rightBox {
+    width: 75vw;
+    background-color: rgb(255, 224, 239);
+    border-radius: 20px;
+    border-left: 2px solid black;
+    border-bottom: 5px solid black;
+}
+
+#leftBox {
+    width: 25vw;
+    background-color: rgb(202, 197, 197);
+    border-right: 2px solid black;
+    border-top: 5px solid black;
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    border-radius: 20px;
+
+}
+#leftBox .container {
+    /* border: 2px solid black; */
+    margin: 5px;
+}
+#leftBox #con1{
+    display: flex;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+#leftBox #con1 img {
+    border: 2px solid rgb(0, 0, 0);
+    height: 150px;
+    border-radius: 200px;
+    padding: 1px;
+}
+
+#leftBox h3 {
+    text-decoration: underline;
+    margin: 0;
+}
+#leftBox li img{
+    margin-right: 10px;
+}
+#leftBox li {
+    font-size: 20px;
+    color: black;
+}
+
+#leftBox li a{
+    color: black;
+}
+#leftBox li a:hover{
+    color: rgb(128, 128, 128);
+}
+
+#rightBox h2 {
+    color: blue;
+    font-weight: 100;
+}

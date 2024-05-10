@@ -1,0 +1,10 @@
+/* styles.css */
+.container {
+    text-align: center;
+    margin-top: 50px;
+    font-family: Arial, sans-serif;
+}
+
+.text {
+    color: blue; /* Change text color to blue */
+}

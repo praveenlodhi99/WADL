@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Form</title>
+    <link rel="stylesheet" href="form.css">
+    <script>
+        function validateForm() {
+            // Password validation
+            var password = document.getElementById("password_input").value;
+
+            // At least 8 characters, one capital, one small character
+            if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(password) || password.length < 8) {
+                alert("Password must have at least 8 characters, including one capital letter, one small letter, and one special character");
+                return false;
+            }
+
+            // Confirm Password validation
+            var confirmPassword = document.getElementById("confirm_password_input").value;
+
+            if (confirmPassword !== password) {
+                alert("Passwords do not match");
+                return false;
+            } else {
+                alert("Password matched");
+            }
+
+            // Email validation
+            var email = document.getElementById("email_input").value;
+
+            // Email must end with "@gmail.com"
+            if (!/^[^\s@]+@gmail\.com$/.test(email)) {
+                alert("Email must end with '@gmail.com'");
+                return false;
+            }
+
+            // Phone number validation
+            var phoneNumber = document.getElementById("number_input").value;
+
+            // Ensure the phone number has exactly 10 digits
+            if (!/^\d{10}$/.test(phoneNumber)) {
+                alert("Phone number must have exactly 10 digits");
+                return false;
+            }
+
+            // Other validations (you can add more as needed)
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Complaint Box</h1>
+    <div class="form">
+
+        <form action="/submit" method="post" onsubmit="return validateForm()">
+
+            <div class="formbox" id="box-1">
+                <!-- Text Input -->
+                <input type="text" id="text_input" name="text_input" placeholder="Enter your Name" required>
+            </div>
+
+            <div class="formbox" id="box-2">
+                <!-- Password Input -->
+                <input type="password" id="password_input" name="password_input" placeholder="Enter your Password" required>
+            </div>
+
+            <div class="formbox" id="box-12">
+                <!-- Confirm Password Input -->
+                <input type="password" id="confirm_password_input" name="confirm_password_input" placeholder="Confirm Password" required>
+            </div>
+
+            <div class="formbox" id="box-3">
+                <!-- Email Input -->
+                <input type="email" id="email_input" name="email_input" placeholder="E-Mail (@gmail.com)" required>
+            </div>
+
+            <div class="formbox" id="box-4">
+                <!-- Number Input -->
+                <input type="number" id="number_input" name="number_input" placeholder="Enter your Phone Number (+91)" required>
+            </div>
+
+            <div class="gender_and_role">
+                <div class="formbox" id="box-5-gender">
+                    <!-- Dropdown/Select Box -->
+                    <label for="select_input">Department : </label>
+                    <select id="select_input" name="select_input">
+                        <option value="option1">Finance</option>
+                        <option value="option2">IT</option>
+                        <option value="option3">Operations</option>
+                        <option value="option3">Human Resource</option>
+                        <option value="option3">Sales</option>
+                    </select>
+                </div>
+
+                <div class="formbox" id="box-5-role">
+                    <!-- Dropdown/Select Box -->
+                    <label for="select_input">Role : </label>
+                    <select id="select_input" name="select_input">
+                        <option value="option1">Manager</option>
+                        <option value="option2">Employee</option>
+                        <option value="option3">Others</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="formbox" id="box-7">
+                <!-- Radio Buttons -->
+                <label>Qualification :</label>
+                <input type="radio" id="radio_option1" name="radio_group" value="option1">
+                <label for="radio_option1">10th Pass</label>
+                <input type="radio" id="radio_option2" name="radio_group" value="option2">
+                <label for="radio_option2">12th Pass</label>
+                <input type="radio" id="radio_option2" name="radio_group" value="option2">
+                <label for="radio_option2">Graduation</label>
+            </div>
+
+            <div class="formbox" id="box-9">
+                <!-- File Input -->
+                <label for="file_input">Resume : </label>
+                <input type="file" id="file_input" name="file_input">
+            </div>
+
+            <div class="formbox" id="box-8">
+                <!-- Textarea -->
+                <textarea id="textarea_input" name="textarea_input" rows="5" cols="50"
+                    placeholder="Enter your Description..."></textarea>
+            </div>
+
+            <div class="formbox" id="box-6">
+                <!-- Checkbox -->
+                <input type="checkbox" id="checkbox_input" name="checkbox_input" required>
+                <label for="checkbox_input">Terms</label>
+                <input type="checkbox" id="checkbox_input" name="checkbox_input" required>
+                <label for="checkbox_input">Conditions</label>
+            </div>
+
+            <div class="formbox" id="box-10">
+                <!-- Date Input -->
+                <label for="date_input">DoB :</label>
+                <input type="date" id="date_input" name="date_input">
+            </div>
+
+            <div class="formbox" id="box-11">
+                <!-- Submit Button -->
+                <input class="button" id="reset" type="reset" value="Reset Details" onclick="alert('Form is Reset')">
+                <input class="button" id="submit" type="submit" value="Submit"
+                    onclick="setTimeout(function() { if(validateForm()) { alert('Form is submitted'); } }, 1500);">
+            </div>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

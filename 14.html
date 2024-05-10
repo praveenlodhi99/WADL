@@ -1,0 +1,79 @@
+<!-- 14. Find max/min numbers -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Max/Min Numbers</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3f4f6;
+        }
+
+        .container {
+            width: 300px;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-sizing: border-box;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Find Max/Min Numbers</h2>
+        <input type="text" id="numbers" placeholder="Enter numbers separated by commas">
+        <button onclick="findMinMax()">Find Max/Min</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function findMinMax() {
+            var numbersInput = document.getElementById("numbers").value;
+            var numbersArray = numbersInput.split(",").map(Number);
+            numbersArray.sort(function (a, b) {
+                return a - b;
+            });
+            var min = numbersArray[0];
+            var max = numbersArray[numbersArray.length - 1];
+            document.getElementById("result").innerHTML = "Minimum: " + min + "<br>Maximum: " + max;
+        }
+    </script>
+
+</body>
+</html>

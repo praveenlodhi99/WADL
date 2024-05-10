@@ -1,0 +1,35 @@
+<!-- 17. Write a JavaScript code that changes the background color of a web page automatically after every 5 seconds. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Background Color Change</title>
+    <style>
+        body {
+            transition: background-color 0.2s ease;
+            /* Smooth transition effect */
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        var colors = ['#ff5733', '#33ff57', '#5733ff', '#33ffff', '#ffff33'];
+
+        function changeBackgroundColor() {
+            var randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+
+        changeBackgroundColor();
+
+        setInterval(changeBackgroundColor, 2000);
+    </script>
+
+</body>
+
+</html>

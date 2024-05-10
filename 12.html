@@ -1,0 +1,81 @@
+<!-- 12. Print first n numbers (loop) -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print first n Numbers</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(5px);
+            width: 300px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Print first n Numbers</h2>
+        <input type="number" id="inputNumber" placeholder="Enter a number">
+        <button onclick="printNumbers()">Print</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function printNumbers() {
+            var n = document.getElementById("inputNumber").value;
+            var result = '';
+            for (var i = 1; i <= n; i++) {
+                result += i + ', ';
+            }
+            document.getElementById("result").innerText = "First " + n + " numbers: " + result.slice(0, -2);
+        }
+    </script>
+
+</body>
+
+</html>

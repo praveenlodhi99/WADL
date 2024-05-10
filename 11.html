@@ -1,0 +1,84 @@
+<!-- 11. Check number or a word is Palindrome or not -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 300px;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Palindrome Checker</h2>
+        <form id="palindromeForm">
+            <input type="text" id="inputText" placeholder="Enter a number or word">
+            <input type="submit" value="Check">
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('palindromeForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            var input = document.getElementById('inputText').value.toLowerCase().replace(/[^a-z0-9]/g, '');
+            var reversed = input.split('').reverse().join('');
+            var isPalindrome = (input === reversed);
+            var result = isPalindrome ? 'Yes, it\'s a palindrome!' : 'No, it\'s not a palindrome!';
+            document.getElementById('result').innerText = result;
+        });
+    </script>
+    
+</body>
+
+</html>

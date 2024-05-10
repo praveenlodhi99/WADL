@@ -1,0 +1,132 @@
+<!-- 10. Program on switch statement: add, substract, divide, multiply -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"] {
+            width: 100px;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Arithmetic Operations</h2>
+        <form id="arithmeticForm">
+            <label for="numberOfNumbers">How many numbers do you want to use?</label>
+            <input type="number" id="numberOfNumbers" min="1" required>
+            <div id="numberInputs"></div>
+            <label for="operation">Select operation:</label>
+            <select id="operation" required>
+                <option value="">Select operation</option>
+                <option value="add">Addition (+)</option>
+                <option value="subtract">Subtraction (-)</option>
+                <option value="multiply">Multiplication (*)</option>
+                <option value="divide">Division (/)</option>
+            </select>
+            <button type="button" onclick="calculate()">Calculate</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function createNumberInputs() {
+            const numberOfNumbers = document.getElementById("numberOfNumbers").value;
+            const numberInputsDiv = document.getElementById("numberInputs");
+            numberInputsDiv.innerHTML = ""; // Clear previous inputs
+            for (let i = 1; i <= numberOfNumbers; i++) {
+                numberInputsDiv.innerHTML += `
+                    <input type="number" id="number${i}" placeholder="Enter number ${i}" required>
+                `;
+            }
+        }
+
+        function calculate() {
+            const operation = document.getElementById("operation").value;
+            const numberOfNumbers = document.getElementById("numberOfNumbers").value;
+            let result;
+            switch (operation) {
+                case "add":
+                    result = 0;
+                    for (let i = 1; i <= numberOfNumbers; i++) {
+                        result += parseFloat(document.getElementById(`number${i}`).value);
+                    }
+                    break;
+                case "subtract":
+                    result = parseFloat(document.getElementById(`number1`).value);
+                    for (let i = 2; i <= numberOfNumbers; i++) {
+                        result -= parseFloat(document.getElementById(`number${i}`).value);
+                    }
+                    break;
+                case "multiply":
+                    result = 1;
+                    for (let i = 1; i <= numberOfNumbers; i++) {
+                        result *= parseFloat(document.getElementById(`number${i}`).value);
+                    }
+                    break;
+                case "divide":
+                    result = parseFloat(document.getElementById(`number1`).value);
+                    for (let i = 2; i <= numberOfNumbers; i++) {
+                        result /= parseFloat(document.getElementById(`number${i}`).value);
+                    }
+                    break;
+                default:
+                    result = "Please select an operation.";
+            }
+            document.getElementById("result").innerHTML = `Result: ${result}`;
+        }
+
+        document.getElementById("numberOfNumbers").addEventListener("input", createNumberInputs);
+    </script>
+
+</body>
+
+</html>

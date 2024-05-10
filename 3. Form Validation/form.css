@@ -1,0 +1,157 @@
+body{
+    /* background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%); */
+    background-image: linear-gradient(to top, #cd9cf2 0%, #f6f3ff 100%) ;
+    z-index: -1;
+    /* border: 5px solid cyan; */
+    padding-bottom: 30px;
+    padding-top: 5px;
+}
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    margin: 10px;
+}
+
+.form {
+    justify-content: center;
+    justify-items: center;
+    display: flex;
+    font-family: laila;
+    font-size: 13px;
+}
+
+.form form {
+    
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    padding: 30px 0px;
+    filter: blur(100%);
+    background-image: linear-gradient(to top, #cd9cf2 0%, #f6f3ff 100%) ;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3), 0 5px 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+
+.form label, input {
+    margin: 5px;
+}
+
+.formbox {
+    /* border: 2px solid hotpink; */
+    display: flex;
+    justify-content: center;
+    margin: none;
+    /* text-align: center; */
+}
+
+input {
+    height: 15px;
+    text-align: center;
+    border-radius: 8px;
+    border: none;
+    /* border: 2px solid hotpink; */
+}
+
+.formbox input#text_input {
+    font-family: laila;
+    padding: 5px;
+    width: 300px;
+}
+
+#box-1 input,
+#box-4 input,
+#box-12 input,
+#box-3 input,
+#box-2 input {
+    font-family: laila;
+    padding: 5px;
+    width: 300px;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3), 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+}
+
+#box-5-gender select#select_input,
+#box-5-role select#select_input {
+    font-family: laila;
+    padding: 3px 0px;
+    border-radius: 10px;
+}
+
+#checkbox_input {
+    margin-top: 7px;
+    width: 15px;
+}
+
+#box-9 { 
+    margin-bottom: 7px;
+    justify-content: center;
+    padding-left: 116px; 
+}
+
+#box-9 input {
+    font-family: laila;
+    margin: 5px;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-bottom: 3px;
+}
+#box-11 { 
+    margin-top: 7px;
+    justify-content: space-around;  
+}
+
+#box-11 .button { 
+    height: 6vh;
+    font-family: laila;
+    border: none;
+    background-color: transparent;
+    padding: 10px 50px;
+    font-size: 13px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3), 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+    transition: 256ms all;
+    border-radius: 20px;
+    
+
+}
+
+#box-11 .button:hover { 
+    cursor: pointer;
+    font-size: 12px;
+    padding: 10px 20px;
+    font-weight: bolder;
+    color: #000000;
+    
+    
+}
+
+#box-11 #reset:hover {
+    background-color: transparent;
+    background-image: linear-gradient(160deg, #ff7d7d 0%, #e60800 100%);
+    
+}
+
+#box-11 #submit:hover {
+    background-color: transparent;
+    background-image: linear-gradient(160deg, #97fe6b 0%, #80D0C7 100%);
+}
+
+#box-8 textarea {
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-family: laila;
+    overflow: hidden;
+    text-align: center;
+}
+
+.gender_and_role {
+    /* border: 2px solid hotpink; */
+    display: flex;
+    justify-content: space-around;
+    margin: 5px 0px;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+}

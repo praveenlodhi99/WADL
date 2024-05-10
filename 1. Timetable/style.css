@@ -1,0 +1,25 @@
+table{
+    border: 2px solid black;
+    cursor: pointer;
+    text-align: center;
+}
+
+th, td {
+    padding: 5px 15px;
+    margin: 2px;
+    text-align: center;
+    align-items: center;
+}
+table th{
+    border: 2px solid black;
+    text-decoration: underline;
+    background-color: rgb(250, 216, 166);
+}
+table td{
+    border: 2px solid black;
+    background-color: blanchedalmond;
+}
+
+tr td:nth-child(1) {
+    background-color: rgb(250, 216, 166);
+}

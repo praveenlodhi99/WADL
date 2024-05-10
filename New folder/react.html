@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Example</title>
+  <!-- Include React and ReactDOM -->
+  <script src="react.development.js"></script>
+  <script src="react-dom.development.js"></script>
+</head>
+<body>
+  <!-- This is where our React app will be rendered -->
+  <div id="root"></div>
+
+  <!-- React JSX code -->
+  <script type="text/javascript">
+    // Define a simple React component
+    const App = () => {
+      return (
+        React.createElement('div', null,
+          React.createElement('h1', null, 'Hello, React!'),
+          React.createElement('p', null, 'This is a simple React component rendered without installation.')
+        )
+      );
+    };
+
+    // Render the React component to the DOM
+    ReactDOM.render(React.createElement(App), document.getElementById('root'));
+  </script>
+</body>
+</html>

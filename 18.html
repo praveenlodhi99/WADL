@@ -1,0 +1,76 @@
+<!-- 18. Write a Javascript functions for the following tasks: alert "Hello World" if x is greater than y otherwise alert "Goodbye". -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Alert</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .input-container {
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <h1>Comparison Alert</h1>
+        <div class="input-container">
+            <label for="x">Enter the value of x:</label>
+            <input type="number" id="x">
+        </div>
+        <div class="input-container">
+            <label for="y">Enter the value of y:</label>
+            <input type="number" id="y">
+        </div>
+        <button onclick="compareValues()">Compare</button>
+    </div>
+
+    <script>
+        function compareValues() {
+            var x = parseFloat(document.getElementById('x').value);
+            var y = parseFloat(document.getElementById('y').value);
+
+            if (x > y) {
+                alert("Hello! x (" + x + ") is greater than y (" + y + ").");
+            } else {
+                alert("Goodbye! x (" + x + ") is not greater than y (" + y + ").");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

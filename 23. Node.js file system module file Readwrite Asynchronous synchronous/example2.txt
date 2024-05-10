@@ -1,0 +1,1 @@
+Hello, asynchronous file write!

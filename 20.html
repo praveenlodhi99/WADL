@@ -1,0 +1,101 @@
+<!-- 20. Add Javascript Cookies in website -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Manager</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+        }
+
+        input {
+            width: calc(100% - 10px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Add Cookie</h2>
+        <input type="text" id="key" placeholder="Enter cookie key"><br>
+        <input type="text" id="value" placeholder="Enter cookie value"><br>
+        <button onclick="setCookie()">Set Cookie</button>
+        <h2>Saved Cookies</h2>
+        <ul id="cookieList"></ul>
+    </div>
+
+    <script>
+        function setCookie() {
+            var key = document.getElementById("key").value;
+            var value = document.getElementById("value").value;
+            var expiryDate = new Date();
+            expiryDate.setDate(expiryDate.getDate() + 1); // Expires in 1 day
+
+            document.cookie = encodeURIComponent(key) + "=" + encodeURIComponent(value) + "; expires=" + expiryDate.toUTCString() + "; path=/";
+            refreshCookieList();
+        }
+
+        function refreshCookieList() {
+            var cookies = document.cookie.split("; ");
+            var cookieList = document.getElementById("cookieList");
+            cookieList.innerHTML = "";
+
+            cookies.forEach(function (cookie) {
+                var parts = cookie.split("=");
+                var key = decodeURIComponent(parts[0]);
+                var value = decodeURIComponent(parts[1]);
+                var listItem = document.createElement("li");
+                listItem.textContent = key + ": " + value;
+                cookieList.appendChild(listItem);
+            });
+        }
+    </script>
+
+</body>
+</html>

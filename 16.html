@@ -1,0 +1,86 @@
+<!-- 16. Convert temperature degree C to degree Fahranheit F and vice versa -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .converter {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .converter input,
+        .converter select,
+        .converter button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .converter button {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        #result {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <h1>Temperature Converter</h1>
+        <div class="converter">
+            <input type="number" id="temperature" placeholder="Enter temperature...">
+            <select id="unit">
+                <option value="celsius">Celsius (°C)</option>
+                <option value="fahrenheit">Fahrenheit (°F)</option>
+            </select>
+            <button onclick="convert()">Convert</button>
+        </div>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function convert() {
+            var temperature = parseFloat(document.getElementById("temperature").value);
+            var unit = document.getElementById("unit").value;
+            var result;
+
+            if (unit === "celsius") {
+                result = (temperature * 9 / 5) + 32;
+                document.getElementById("result").innerHTML = temperature + "°C = " + result + "°F";
+            } else {
+                result = (temperature - 32) * 5 / 9;
+                document.getElementById("result").innerHTML = temperature + "°F = " + result.toFixed(2) + "°C";
+            }
+        }
+    </script>
+
+</body>
+</html>
