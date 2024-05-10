@@ -1,0 +1,14 @@
+.external-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.external-heading {
+    color: #dc3545;
+}
+
+.external-text {
+    line-height: 1.6;
+}

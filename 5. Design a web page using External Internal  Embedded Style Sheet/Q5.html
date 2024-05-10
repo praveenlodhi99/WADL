@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Sheet Examples</title>
+    
+    <!-- Internal css -->
+    <style>
+        .internal-container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .internal-heading {
+            color: #007bff;
+        }
+
+        .internal-text {
+            line-height: 1.6;
+        }
+    </style>
+
+    <!-- External css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="internal-container">
+    <h1 class="internal-heading">Internal Style Sheet Example</h1>
+    <p class="internal-text">This is an example of using an internal stylesheet.</p>
+</div>
+
+<div class="external-container">
+    <h1 class="external-heading">External Style Sheet Example</h1>
+    <p class="external-text">This is an example of using an external stylesheet.</p>
+</div>
+ <!-- Embedded/inline css -->
+<div class="embedded-container">
+    <h1 style="background-color: coral; height: 35px;">External Style Sheet Example</h1>
+    <p style="color: blue;">This is an example of using an external stylesheet.</p>
+</div>
+
+</body>
+</html>
